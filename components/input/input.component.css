@@ -1,0 +1,20 @@
+.input {
+    max-width: 300px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    padding: 5px;
+}
+
+.input div {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px;
+}
+
+.input p {
+    display: none;
+    color: red;
+}

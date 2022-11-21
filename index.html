@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valid Form</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .container {
+            min-height: 100vh;
+            display: grid;
+            grid-template-rows: 100px 1fr 100px;
+            display: none;
+        }
+
+        .container form {
+            max-width: 400px;
+            margin: 100px auto;
+            padding: 10px;
+
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .container form input {
+            padding: 10px;
+            font-size: 20px;
+        }
+
+        .container form h2 {
+            margin: 0;
+        }
+
+        .container header, 
+        .container footer {
+            padding: 10px;
+            background-color: teal;
+            color: #eee;
+        } 
+
+        .invalidInput {
+            outline: 2px solid red;
+        }
+    </style>
+
+    <link rel="stylesheet" href="./components/input/input.component.css">
+</head>
+<body>
+    <noscript>
+        <h1>Enable JS</h1>
+    </noscript>
+    <div class="container">
+        <header>
+            <h1>Validate Form</h1>
+        </header>
+
+        <form name="login">
+            <h2> Login Form</h2>
+            <input type="text" 
+                name="userLogin" 
+                placeholder="login"
+                required
+                minlength="3"
+                maxlength="20"
+                >
+            <input type="text"
+                pattern="^\d{2}(-| )\d{2}(-| )\d{2}$"
+                name="userPhone"
+                placeholder="11-11-11"
+                required
+                minlength="3"
+                maxlength="20"
+                >
+            <input type="text" 
+                name="userPassword"
+                placeholder="password"
+                required
+                minlength="3"
+                maxlength="20"
+                >
+            <input type="submit" value="Login">
+        </form>
+
+        <form name="login2">
+
+        </form>
+
+
+        <footer></footer>
+    </div>
+
+    <script src="./components/input/input.component.js"></script>
+    <script src="./index.js"></script>
+</body>
+</html>
