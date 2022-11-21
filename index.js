@@ -19,12 +19,12 @@ document.forms.login?.addEventListener('submit', function(event) {
         loginElem.classList.remove('invalidInput');
     }
     // +380(97)-77-77-77
-    // /^\+?\d{3}\(?\d{2}\)?-?\d{2}-?\d{2}-?\d{2}$/
-    // if (!/^\d{2}(-| )\d{2}(-| )\d{2}$/g.test(phoneElem.value)) {
-    //     return phoneElem.classList.add('invalidInput');
-    // } else {
-    //     phoneElem.classList.remove('invalidInput');
-    // }
+    /^\+?\d{3}\(?\d{2}\)?-?\d{2}-?\d{2}-?\d{2}$/
+    if (!/^\d{2}(-| )\d{2}(-| )\d{2}$/g.test(phoneElem.value)) {
+        return phoneElem.classList.add('invalidInput');
+    } else {
+        phoneElem.classList.remove('invalidInput');
+    }
 
     // (?=.*[^A-Za-z0-9])
     if (!/(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^;#])/g.test(passwordElem.value)) {
@@ -32,12 +32,12 @@ document.forms.login?.addEventListener('submit', function(event) {
     } else {
         passwordElem.classList.remove('invalidInput');
     }
-    // if (loginElem.value.length < 3 || loginElem.value.length > 20) {
-    //     return loginElem.classList.add('invalidInput');
-    // } 
-    //     else if(/superadmin/.test(loginElem.value)) {
-    //         loginElem.classList.remove('invalidInput');
-    //     }
+    if (loginElem.value.length < 3 || loginElem.value.length > 20) {
+        return loginElem.classList.add('invalidInput');
+    } 
+        else if(/superadmin/.test(loginElem.value)) {
+            loginElem.classList.remove('invalidInput');
+        }
 
     // else {
     //     loginElem.classList.remove('invalidInput');
